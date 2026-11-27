@@ -1,42 +1,52 @@
 # Customer Segmentation and Purchasing Behavior Analysis
 
-## Project Overview
-This project analyzes customer purchasing behavior using Python, RFM analysis, and unsupervised machine learning.
+**Author:** Lejla Setka  
+**Course:** CSE-532 – Python & Data Analytics  
+**Semester:** Fall 2026
 
-The goal is to identify meaningful customer groups based on purchasing patterns and explain how these groups can support business decisions.
+## Project Overview
+
+This project analyzes customer purchasing behavior using Recency, Frequency, and Monetary (RFM) analysis and unsupervised machine learning. The objective is to identify meaningful customer segments based on historical purchasing patterns without predefined customer labels.
+
+The project emphasizes balancing quantitative clustering performance with interpretability and practical business applications.
 
 ## Dataset
-UCI Machine Learning Repository: Online Retail
+
+The dataset used in this project is the Online Retail dataset from the UCI Machine Learning Repository.
+
 https://archive.ics.uci.edu/dataset/352/online+retail
 
-The dataset contains 541,909 transaction records from December 2010 to December 2011.
+- Original transaction records: 541,909
+- Cleaned positive purchase records: 392,692
+- Unique customer profiles: 4,338
+- Observation period: December 2010–December 2011
 
-## Methods
-- Data cleaning and preprocessing
-- Exploratory data analysis
-- Recency, Frequency, and Monetary (RFM) analysis
-- K-Means clustering
-- Agglomerative clustering
-- Gaussian mixture models
-- Cluster evaluation and visualization
+## Methodology
 
-## Results
-The analysis identified two main customer segments from 4,338 customer profiles:
+1. Data cleaning and duplicate removal
+2. Exploratory data analysis
+3. Customer-level RFM feature engineering
+4. Logarithmic transformation and standardization
+5. K-Means clustering with k = 2–6
+6. Agglomerative clustering and Gaussian mixture model comparisons
+7. Silhouette and Davies–Bouldin evaluation
+8. Random initialization stability analysis using the Adjusted Rand Index
+9. Principal Component Analysis (PCA) for visualization
+10. Customer segment interpretation
 
-- More engaged customers: More recent purchases, higher purchase frequency, and greater spending.
-- Less engaged customers: Less recent purchases, fewer purchases, and lower spending.
+## Final Results
 
-The project compares clustering performance with the interpretability of customer groups.
+| Evaluation Metric | Result |
+|---|---:|
+| Total customers | 4,338 |
+| Selected number of clusters | 2 |
+| K-Means silhouette score | 0.4284 |
+| Davies–Bouldin index | 0.8920 |
+| PCA explained variance | 93.9% |
+| Initialization stability (ARI) | 0.9972–1.0000 |
 
-## How to Reproduce the Results
-1. Download the Online Retail dataset from the UCI website.
-2. Extract the file named Online Retail.xlsx.
-3. Install Python and the packages listed in requirements.txt.
-4. Download the project notebook and place it in the same folder as the dataset.
-5. Open the notebook in Jupyter Notebook or Google Colab.
-6. Run the notebook cells in order to reproduce the analysis and visualizations.
+### Customer Segment Profiles
 
-## Author
-Lejla Setka
-CSE 532: Python & Data Analytics
-Fall 2026
+| Metric | More Engaged | Less Engaged |
+|---|---:|---:|
+| Customers | 1,652 | 2
